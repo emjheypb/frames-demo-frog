@@ -35,7 +35,6 @@ app.frame("/", (c) => {
       </div>
     ),
     intents: [
-      <TextInput placeholder="Enter your fruit..." />,
       <Button value="apple">Apple</Button>,
       <Button value="banana">Banana</Button>,
       <Button value="mango">Mango</Button>,
