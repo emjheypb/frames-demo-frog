@@ -31,7 +31,7 @@ app.frame("/", (c) => {
       >
         {status === "initial"
           ? "Select your fruit!"
-          : `${frameData?.fid} Selected ${buttonValue} and typed in "${inputText}"`}
+          : `${frameData?.fid.toString()} Selected ${buttonValue} and typed in "${inputText}"`}
       </div>
     ),
     intents: [
