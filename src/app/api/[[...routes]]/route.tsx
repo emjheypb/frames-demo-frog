@@ -78,6 +78,7 @@ app.frame("/neynar", (c) => {
       <Button value="apple">Apple</Button>,
       <Button value="banana">Banana</Button>,
       <Button value="mango">Mango</Button>,
+      <Button action="/">Home</Button>,
     ],
   });
 });
