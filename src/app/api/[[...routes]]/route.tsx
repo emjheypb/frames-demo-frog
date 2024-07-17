@@ -13,7 +13,19 @@ app.frame("/", (c) => {
   const { buttonValue, status } = c;
   return c.res({
     image: (
-      <div style={{ color: "white", display: "flex", fontSize: 60 }}>
+      <div
+        style={{
+          color: "white",
+          display: "flex",
+          fontSize: 60,
+          alignItems: "center",
+          flexDirection: "column",
+          justifyContent: "center",
+          textAlign: "center",
+          height: "100%",
+          width: "100%",
+        }}
+      >
         {status === "initial"
           ? "Select your fruit!"
           : `Selected: ${buttonValue}`}
