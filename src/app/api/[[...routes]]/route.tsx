@@ -1,16 +1,19 @@
 /** @jsxImportSource frog/jsx */
-import { Button, Frog } from "frog";
+import { Button, Frog, TextInput } from "frog";
 import { handle } from "frog/next";
 import { devtools } from "frog/dev";
 import { serveStatic } from "frog/serve-static";
+import { pinata } from "frog/hubs";
 
 const app = new Frog({
   basePath: "/api",
   title: "Frog",
+  hub: pinata(),
 });
 
 app.frame("/", (c) => {
-  const { buttonValue, status } = c;
+  const { buttonValue, status, frameData, verified, inputText } = c;
+
   return c.res({
     image: (
       <div
@@ -28,10 +31,11 @@ app.frame("/", (c) => {
       >
         {status === "initial"
           ? "Select your fruit!"
-          : `Selected: ${buttonValue}`}
+          : `${frameData?.fid} Selected ${buttonValue} and typed in "${inputText}"`}
       </div>
     ),
     intents: [
+      <TextInput placeholder="Enter your fruit..." />,
       <Button value="apple">Apple</Button>,
       <Button value="banana">Banana</Button>,
       <Button value="mango">Mango</Button>,
